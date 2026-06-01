@@ -27,21 +27,37 @@
         .then(function () {
           video.muted = false;
           video.volume = 1;
-          hideStartButton();
+          window.setTimeout(function () {
+            if (video.paused) {
+              showStartButton();
+            } else {
+              hideStartButton();
+            }
+          }, 300);
         })
         .catch(showStartButton);
     } else {
       video.muted = false;
       video.volume = 1;
-      hideStartButton();
+      window.setTimeout(function () {
+        if (video.paused) {
+          showStartButton();
+        } else {
+          hideStartButton();
+        }
+      }, 300);
     }
   }
 
   function startFromGesture() {
     video.muted = false;
     video.volume = 1;
-    video.play();
-    hideStartButton();
+    var playAttempt = video.play();
+    if (playAttempt && typeof playAttempt.then === "function") {
+      playAttempt.then(hideStartButton).catch(showStartButton);
+    } else {
+      hideStartButton();
+    }
   }
 
   if (startButton) {
