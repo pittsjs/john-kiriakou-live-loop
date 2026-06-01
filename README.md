@@ -17,9 +17,10 @@ The page automatically plays the MP4 on load, loops it forever, hides native con
 The video tag uses:
 
 - `autoplay`
-- `muted`
 - `loop`
 - `playsinline`
+
+The page starts muted to satisfy browser autoplay rules, then immediately tries to unmute for podcast audio. If the host browser blocks audible autoplay, the page displays a full-screen **Start Audio** button.
 
 The CSS makes `html`, `body`, and the video fill the viewport with no margins, padding, borders, scrollbars, or extra whitespace.
 
