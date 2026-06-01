@@ -6,11 +6,13 @@ This repository hosts a local MP4 video in a clean, stream-ready HTML page for O
 
 - `index.html` - The GitHub Pages entry point.
 - `styles.css` - Full-viewport, no-scrollbar video layout.
-- `john-kiriakou-live-loop.mp4` - The hosted, GitHub Pages-ready MP4 video.
+- `john-kiriakou-live-loop-part-1.mp4` - Part 1 of the hosted, GitHub Pages-ready MP4 video with audio.
+- `john-kiriakou-live-loop-part-2.mp4` - Part 2 of the hosted, GitHub Pages-ready MP4 video with audio.
+- `part-2.html` - A second page that plays Part 2.
 
 ## Behavior
 
-The page automatically plays the MP4 on load, loops it forever, keeps it muted, hides native controls, and scales the video responsively to fit the full browser source area.
+The page automatically plays the MP4 on load, loops it forever, hides native controls, includes podcast audio, and scales the video responsively to fit the full browser source area.
 
 The video tag uses:
 
@@ -28,7 +30,9 @@ The CSS makes `html`, `body`, and the video fill the viewport with no margins, p
    - `index.html`
    - `styles.css`
    - `README.md`
-   - `john-kiriakou-live-loop.mp4`
+   - `john-kiriakou-live-loop-part-1.mp4`
+   - `john-kiriakou-live-loop-part-2.mp4`
+   - `part-2.html`
 3. Commit and push the files to GitHub:
 
    ```bash
@@ -56,6 +60,18 @@ https://USERNAME.github.io/REPO/
 
 Use the deployed GitHub Pages URL as the Browser Source URL. Set the source width and height to match your canvas or overlay area.
 
+Part 1:
+
+```text
+https://USERNAME.github.io/REPO/
+```
+
+Part 2:
+
+```text
+https://USERNAME.github.io/REPO/part-2.html
+```
+
 Recommended Browser Source settings:
 
 - Width: your target stream width, such as `1920`
@@ -71,4 +87,4 @@ Use the deployed GitHub Pages URL in a browser layer or iframe-capable widget. T
 
 GitHub blocks normal repository files larger than 100 MiB, and GitHub Pages is not a good fit for serving video through Git LFS. This project uses a compressed, muted MP4 that is small enough to live directly in the repository and be served by GitHub Pages.
 
-The original source video filename contains spaces and special characters. The published MP4 uses a clean web filename so the URL is simple and reliable in OBS and StreamElements.
+The original source video filename contains spaces and special characters. The published MP4 files use clean web filenames so the URLs are simple and reliable in OBS and StreamElements.
